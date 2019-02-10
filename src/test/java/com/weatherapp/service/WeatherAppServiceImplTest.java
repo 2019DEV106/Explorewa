@@ -1,7 +1,7 @@
 package com.weatherapp.service;
 
-import static org.junit.Assert.*;
-import static org.mockito.Mockito.when;
+import static org.junit.Assert.assertEquals;
+import static org.junit.Assert.assertNotNull;
 
 import org.junit.Before;
 import org.junit.Test;
@@ -12,8 +12,6 @@ import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 
 import com.weatherapp.constants.WeatherAppConstants;
-import com.weatherapp.customexception.WeatherException;
-import com.weatherapp.model.WeatherData;
 
 public class WeatherAppServiceImplTest {
 

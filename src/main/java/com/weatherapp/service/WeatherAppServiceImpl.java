@@ -10,12 +10,14 @@ import org.springframework.web.client.RestTemplate;
 import com.fasterxml.jackson.databind.ObjectMapper;
 import com.weatherapp.constants.WeatherAppConstants;
 import com.weatherapp.customexception.WeatherException;
-import com.weatherapp.model.WeatherData;
+import com.weatherapp.dto.WeatherData;
+
 @Service
-public class WeatherAppServiceImpl  implements WeatherAppService {
-	
+public class WeatherAppServiceImpl implements WeatherAppService {
+
 	@Autowired
 	private RestTemplate restTemplate;
+ 
 	@Override
 	public WeatherData fetchweatherInfo() throws WeatherException {
 		ResponseEntity<String> response = restTemplate.getForEntity(WeatherAppConstants.WHEATHER_API_URI, String.class);
@@ -23,9 +25,9 @@ public class WeatherAppServiceImpl  implements WeatherAppService {
 		try {
 			return mapper.readValue(response.getBody(), WeatherData.class);
 		} catch (IOException e) {
-			throw new WeatherException("Exception occured during API call",e);
+			throw new WeatherException("Exception occured during API call", e);
 		}
-		
+
 	}
-		
+
 }

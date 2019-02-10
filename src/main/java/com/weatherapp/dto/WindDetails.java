@@ -1,10 +1,12 @@
 package com.weatherapp.dto;
                
-public class Wind
+public class WindDetails
 {
     private String deg;
 
     private String speed;
+    
+    private String gust;
 
     public String getDeg ()
     {
@@ -25,5 +27,13 @@ public class Wind
     {
         this.speed = speed;
     }
+
+	public String getGust() {
+		return gust;
+	}
+
+	public void setGust(String gust) {
+		this.gust = gust;
+	}
 
 }

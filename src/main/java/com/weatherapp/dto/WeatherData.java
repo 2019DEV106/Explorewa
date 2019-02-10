@@ -19,8 +19,9 @@ public class WeatherData
     
     @JsonProperty("main")
     private WeatherDetails weatherDetails;
-
-	private Clouds clouds;
+    
+    @JsonProperty("clouds")
+	private CloudDetails cloudType;
 
     private String id;
     
@@ -28,8 +29,9 @@ public class WeatherData
     private WeatherType weatherType;
 
     private String base;
-
-    private Wind wind;
+    
+    @JsonProperty("wind")
+    private WindDetails windDetails;
 
     public String getDt ()
     {
@@ -84,22 +86,28 @@ public class WeatherData
         return cod;
     }
 
-    public void setCod (String cod)
+	public void setCod (String cod)
     {
         this.cod = cod;
     }
- 
-    public Clouds getClouds ()
-    {
-        return clouds;
-    }
 
-    public void setClouds (Clouds clouds)
-    {
-        this.clouds = clouds;
-    }
+    public WindDetails getWindDetails() {
+		return windDetails;
+	}
 
-    public String getId ()
+	public void setWindDetails(WindDetails windDetails) {
+		this.windDetails = windDetails;
+	}
+
+	public CloudDetails getCloudType() {
+		return cloudType;
+	}
+
+	public void setCloudType(CloudDetails cloudType) {
+		this.cloudType = cloudType;
+	}
+
+	public String getId ()
     {
         return id;
     }
@@ -119,15 +127,7 @@ public class WeatherData
         this.base = base;
     }
 
-    public Wind getWind ()
-    {
-        return wind;
-    }
-
-    public void setWind (Wind wind)
-    {
-        this.wind = wind;
-    }
+    
 
     public WeatherDetails getWeatherDetails() {
 		return weatherDetails;

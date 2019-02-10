@@ -1,6 +1,6 @@
 package com.weatherapp.dto;
                 
-public class Clouds
+public class CloudDetails
 {
     private String all;
 

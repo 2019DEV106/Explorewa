@@ -19,7 +19,5 @@ public class WeatherAppController {
 		model.put("weatherData",weatherAppServiceImpl.fetchweatherInfo());
 		return "weatherInfo";
 	} 
-	/*
-	 * consumed service in controller and updated the unit test case of controller test. 
-	 */
+	 
 }

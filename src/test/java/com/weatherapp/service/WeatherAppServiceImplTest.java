@@ -44,9 +44,9 @@ public class WeatherAppServiceImplTest {
 	@Test
 	public void testfetchweatherInfo() throws Exception {
 		ResponseEntity<String> response = new ResponseEntity<String>("{\"name\":\"Brussels\"}", HttpStatus.OK);
-		when(restTemplate.getForEntity(WeatherAppConstants.WHEATHER_API_URI, String.class))
+		when(restTemplate.getForEntity(WeatherAppConstants.WHEATHER_API_URI+"lat=50.8503&lon=4.3517", String.class))
 		.thenReturn(response);
-		WeatherData weatherData = weatherAppService.fetchweatherInfo();
+		WeatherData weatherData = weatherAppService.fetchweatherInfo("lat=50.8503&lon=4.3517");
 		assertNotNull(weatherData);
 		assertEquals("Brussels", weatherData.getName());
 		 
@@ -56,9 +56,9 @@ public class WeatherAppServiceImplTest {
 	@Test(expected=WeatherException.class)
 	public void testIncorrectJsonResponse() throws Exception {
 		ResponseEntity<String> response = new ResponseEntity<String>("not a json", HttpStatus.OK);
-		when(restTemplate.getForEntity(WeatherAppConstants.WHEATHER_API_URI, String.class))
+		when(restTemplate.getForEntity(WeatherAppConstants.WHEATHER_API_URI+"lat=50.8503&lon=4.3517", String.class))
 		.thenReturn(response);
-		weatherAppService.fetchweatherInfo();
+		weatherAppService.fetchweatherInfo("lat=50.8503&lon=4.3517");
 		
 	}
 	

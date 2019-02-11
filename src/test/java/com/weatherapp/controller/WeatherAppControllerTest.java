@@ -56,42 +56,42 @@ public class WeatherAppControllerTest {
 				.contentType(MediaType.APPLICATION_JSON))
 				.andExpect(status().isNotFound());
 	}
-	@Test
-	public void testWeatherReportReturnNotFoundForInvalidMethod() throws Exception{
-		mockMvc.perform(post("/weatherReport")
-				.contentType(MediaType.APPLICATION_JSON))
-				.andExpect(status().isMethodNotAllowed());
-	}
- 
+	 
 	@Test
 	public void testWeatherReportReturnSuccessForValidURL() throws Exception{
-		when(weatherAppServiceImplMock.fetchweatherInfo()).thenReturn(new WeatherData());
+		when(weatherAppServiceImplMock.fetchweatherInfo("lat=50.8503&lon=4.3517")).thenReturn(new WeatherData());
 		mockMvc.perform(get("/weatherReport")
 				.contentType(MediaType.APPLICATION_JSON))
 				.andExpect(status().isOk());
 	}
-	
+	@Test
+	public void testWeatherReportReturnSuccessForPost() throws Exception{
+		when(weatherAppServiceImplMock.fetchweatherInfo("lat=50.8503&lon=4.3517")).thenReturn(new WeatherData());
+		mockMvc.perform(post("/weatherReport").param("latitude", "50.8503").param("longitude", "4.3517")
+				.contentType(MediaType.APPLICATION_JSON))
+				.andExpect(status().isOk());
+	}
 	@Test
 	public void testWeatherReportReturnNotNullResponse() throws Exception{
 		WeatherData weatherData = new WeatherData();
 		weatherData.setName("Brussels");
-		when(weatherAppServiceImplMock.fetchweatherInfo()).thenReturn(weatherData);
+		when(weatherAppServiceImplMock.fetchweatherInfo("lat=50.8503&lon=4.3517")).thenReturn(weatherData);
 		ModelMap modelMap = new ModelMap();
 		String result = weatherAppController.weatherReport(modelMap);
 		assertNotNull(modelMap.get("weatherData"));
 		assertEquals("weatherInfo", result);
 		assertEquals("Brussels", ((WeatherData) modelMap.get("weatherData")).getName());
-		verify(weatherAppServiceImplMock, times(1)).fetchweatherInfo();
+		verify(weatherAppServiceImplMock, times(1)).fetchweatherInfo("lat=50.8503&lon=4.3517");
 	}
 	
 	@Test
 	public void testWeatherReportReturnNullResponse() throws Exception{
-		when(weatherAppServiceImplMock.fetchweatherInfo()).thenReturn(null);
+		when(weatherAppServiceImplMock.fetchweatherInfo("lat=50.8503&lon=4.3517")).thenReturn(null);
 		ModelMap modelMap = new ModelMap();
 		String result = weatherAppController.weatherReport(modelMap);
 		assertEquals("weatherInfo", result);
 		assertNull(modelMap.get("weatherData"));
-		verify(weatherAppServiceImplMock, times(1)).fetchweatherInfo();
+		verify(weatherAppServiceImplMock, times(1)).fetchweatherInfo("lat=50.8503&lon=4.3517");
 	}
 	
 }

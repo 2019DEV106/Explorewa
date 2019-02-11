@@ -17,10 +17,12 @@ public class WeatherAppServiceImpl implements WeatherAppService {
 
 	@Autowired
 	private RestTemplate restTemplate;
- 
+
 	@Override
-	public WeatherData fetchweatherInfo() throws WeatherException {
-		ResponseEntity<String> response = restTemplate.getForEntity(WeatherAppConstants.WHEATHER_API_URI, String.class);
+	public WeatherData fetchweatherInfo(String latitudeAndlongitude) throws WeatherException {
+		String uri = WeatherAppConstants.WHEATHER_API_URI+latitudeAndlongitude;
+		System.out.println(uri);
+		ResponseEntity<String> response = restTemplate.getForEntity(uri, String.class);
 		ObjectMapper mapper = new ObjectMapper();
 		try {
 			return mapper.readValue(response.getBody(), WeatherData.class);

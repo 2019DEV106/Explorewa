@@ -15,6 +15,13 @@
 
 </head>
 <body>
+
+<form id="weatherDetails" method="post">
+		<b>Please enter Latitude value</b> 	:<input type="text" onkeypress="return isNumberKey(event)" id="latitude" name="latitude" /><br/>
+		<b>Please enter Longitude value: </b> <input type="text"onkeypress="return isNumberKey(event)" id="longitude"  name="longitude" /><br/>
+		<input type="submit" /><br/>
+	</form>
+	 
 	<table class="table table-striped">
 		<caption>
 			<strong>Brussels wheather</strong>
@@ -44,11 +51,37 @@
 			</tr>
 			<tr>
 				<td>Wind Speed</td>
-				<td>${weatherData.wind.speed}</td>
+				<td>${weatherData.windDetails.speed}</td>
 			</tr>
 		</tbody>
-	</table> 
+	</table>
 	<script src="webjars/jquery/1.9.1/jquery.min.js"></script>
 	<script src="webjars/bootstrap/3.3.6/js/bootstrap.min.js"></script>
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.0/jquery.min.js"></script>
+<script>
+$("#weatherDetails").submit(function() {
+	  var latitudeVal = $("#latitude").val();
+	  var longitudeVal = $("#longitude").val();
+	  if(latitudeVal == "") {
+	    alert('Fill this latitude field');
+	    return false;
+	  }
+	  if(longitudeVal == "") {
+		    alert('Fill this longitude field');
+		    return false;
+		  }
+	});
+	
+function isNumberKey(evt)
+{
+   var charCode = (evt.which) ? evt.which : event.keyCode
+   if (charCode != 46 && charCode > 31 && (charCode < 48 || charCode > 57)){
+	   alert("Number and decimal only allowed"); 
+	   return false;
+   }
+   return true;
+}
+
+</script>	
 </body>
 </html>

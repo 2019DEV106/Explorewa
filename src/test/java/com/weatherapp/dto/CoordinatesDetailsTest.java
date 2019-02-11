@@ -5,7 +5,6 @@ import static org.junit.Assert.assertEquals;
 import org.junit.Before;
 import org.junit.Test;
 import org.mockito.InjectMocks;
-import org.mockito.Mock;
 import org.mockito.MockitoAnnotations;
 
 public class CoordinatesDetailsTest {
@@ -22,13 +21,13 @@ public class CoordinatesDetailsTest {
 	public void testSetLongitude() {
 		
 		coordinatesDetails.setLongitude("0.95");
-		assertEquals(coordinatesDetails.getLongitude(), "0.95");
+		assertEquals("0.95",coordinatesDetails.getLongitude());
 	}
 
 	@Test
 	public void testSetLatitude() {
 		coordinatesDetails.setLatitude("0.445");
-		assertEquals(coordinatesDetails.getLatitude(), "0.445");
+		assertEquals("0.445",coordinatesDetails.getLatitude());
 	}
   
 }

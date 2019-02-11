@@ -17,12 +17,14 @@ public class WeatherAppController {
 	
 	@GetMapping(value="/weatherReport")
 	public String weatherReport(ModelMap model) throws WeatherException {
-		model.put("weatherData",weatherAppServiceImpl.fetchweatherInfo());
+		model.put("weatherData",weatherAppServiceImpl.fetchweatherInfo("lat=50.8503&lon=4.3517"));
 		return "weatherInfo";
 	}   
 	
 	@PostMapping(value="/weatherReport")
-	public String prepareWeatherReport(@RequestParam String latitude , @RequestParam String longitude){
+	public String prepareWeatherReport(ModelMap model,@RequestParam String latitude , @RequestParam String longitude) throws WeatherException{
+		String latitudeAndlongitude= "lat="+latitude+"&lon="+longitude;
+		model.put("weatherData",weatherAppServiceImpl.fetchweatherInfo(latitudeAndlongitude));
 		return "weatherInfo";
 	} 
 	 

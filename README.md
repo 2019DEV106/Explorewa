@@ -22,3 +22,8 @@ Step 4  : Launch  the URL http://localhost:8080/weatherReport in the browser
     Jacoco Reports can be viewed in the below location 
     
           target/site/jacoco/index.html
+<b>Sonar Reports</b>
+
+   Sonar Reports can be Found in 
+   https://sonarcloud.io/dashboard?id=2019dev207
+   

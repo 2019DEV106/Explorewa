@@ -21,35 +21,10 @@
 		<strong>Please enter Longitude value: </strong>  <input type="text"onkeypress="return isNumberKey(event)" id="longitude"  name="longitude" value="4.35" /><br/>
 		<input type="submit" /><br/>
 	</form>
-	 
-	 
+	     
+	 <script src="js/weatherinfo.js"></script>  
 	<script src="webjars/jquery/1.9.1/jquery.min.js"></script>
 	<script src="webjars/bootstrap/3.3.6/js/bootstrap.min.js"></script>
 	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.0/jquery.min.js"></script>
-<script>
-$("#weatherDetails").submit(function() {
-	  var latitudeVal = $("#latitude").val();
-	  var longitudeVal = $("#longitude").val();
-	  if(latitudeVal == "") {
-	    alert('Fill this latitude field');
-	    return false;
-	  }
-	  if(longitudeVal == "") {
-		    alert('Fill this longitude field');
-		    return false;
-		  }
-	});
-	
-function isNumberKey(evt)
-{
-   var charCode = (evt.which) ? evt.which : event.keyCode
-   if (charCode != 46 && charCode > 31 && (charCode < 48 || charCode > 57)){
-	   alert("Number and decimal only allowed"); 
-	   return false;
-   }
-   return true;
-}
-
-</script>	
 </body>
 </html>

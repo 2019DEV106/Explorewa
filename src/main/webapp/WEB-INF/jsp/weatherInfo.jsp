@@ -17,8 +17,8 @@
 <body>
 
 <form id="weatherDetails" method="post">
-		<b>Please enter Latitude value</b> 	:<input type="text" onkeypress="return isNumberKey(event)" id="latitude" name="latitude" value="50.85" /><br/>
-		<b>Please enter Longitude value: </b> <input type="text"onkeypress="return isNumberKey(event)" id="longitude"  name="longitude" value="4.35" /><br/>
+		<strong>Please enter Latitude value</strong> 	:<input type="text" onkeypress="return isNumberKey(event)" id="latitude" name="latitude" value="50.85" /><br/>
+		<strong>Please enter Longitude value: </strong>  <input type="text"onkeypress="return isNumberKey(event)" id="longitude"  name="longitude" value="4.35" /><br/>
 		<input type="submit" /><br/>
 	</form>
 	 

@@ -17,44 +17,12 @@
 <body>
 
 <form id="weatherDetails" method="post">
-		<b>Please enter Latitude value</b> 	:<input type="text" onkeypress="return isNumberKey(event)" id="latitude" name="latitude" /><br/>
-		<b>Please enter Longitude value: </b> <input type="text"onkeypress="return isNumberKey(event)" id="longitude"  name="longitude" /><br/>
+		<b>Please enter Latitude value</b> 	:<input type="text" onkeypress="return isNumberKey(event)" id="latitude" name="latitude" value="50.85" /><br/>
+		<b>Please enter Longitude value: </b> <input type="text"onkeypress="return isNumberKey(event)" id="longitude"  name="longitude" value="4.35" /><br/>
 		<input type="submit" /><br/>
 	</form>
 	 
-	<table class="table table-striped">
-		<caption>
-			<strong>Brussels wheather</strong>
-		</caption>
-		<thead>
-		</thead>
-		<tbody>
-			<tr>
-				<td>humidity</td>
-				<td>${weatherData.weatherDetails.humidity}</td>
-			</tr>
-			<tr>
-				<td>pressure</td>
-				<td>${weatherData.weatherDetails.pressure}</td>
-			</tr>
-			<tr>
-				<td>temp</td>
-				<td>${weatherData.weatherDetails.temp}</td>
-			</tr>
-			<tr>
-				<td>temp_max</td>
-				<td>${weatherData.weatherDetails.tempMax}</td>
-			</tr>
-			<tr>
-				<td>temp_min</td>
-				<td>${weatherData.weatherDetails.tempMin}</td>
-			</tr>
-			<tr>
-				<td>Wind Speed</td>
-				<td>${weatherData.windDetails.speed}</td>
-			</tr>
-		</tbody>
-	</table>
+	 
 	<script src="webjars/jquery/1.9.1/jquery.min.js"></script>
 	<script src="webjars/bootstrap/3.3.6/js/bootstrap.min.js"></script>
 	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.0/jquery.min.js"></script>

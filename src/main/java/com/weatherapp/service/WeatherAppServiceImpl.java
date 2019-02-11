@@ -21,7 +21,6 @@ public class WeatherAppServiceImpl implements WeatherAppService {
 	@Override
 	public WeatherData fetchweatherInfo(String latitudeAndlongitude) throws WeatherException {
 		String uri = WeatherAppConstants.WHEATHER_API_URI+latitudeAndlongitude;
-		System.out.println(uri);
 		ResponseEntity<String> response = restTemplate.getForEntity(uri, String.class);
 		ObjectMapper mapper = new ObjectMapper();
 		try {

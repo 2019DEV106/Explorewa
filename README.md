@@ -26,4 +26,4 @@ Step 4  : Launch  the URL http://localhost:8080/weatherReport in the browser
 
    Sonar Reports can be Found in 
    https://sonarcloud.io/dashboard?id=2019dev207
-   
+  

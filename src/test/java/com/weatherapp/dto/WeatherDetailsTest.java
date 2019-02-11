@@ -20,31 +20,31 @@ public class WeatherDetailsTest {
 	@Test
 	public void testSetTemp() {
 		weatherDetails.setTemp("8");
-		assertEquals(weatherDetails.getTemp(),"8");
+		assertEquals("8",weatherDetails.getTemp());
 	}
 
 	@Test
 	public void testSetTempMin() {
 		weatherDetails.setTempMin("2");
-		assertEquals(weatherDetails.getTempMin(),"2");
+		assertEquals("2",weatherDetails.getTempMin());
 	}
 
 	@Test
 	public void testSetHumidity() {
 		weatherDetails.setHumidity("low");
-		assertEquals(weatherDetails.getHumidity(),"low");
+		assertEquals("low",weatherDetails.getHumidity());
 	}
 
 	@Test
 	public void testSetPressure() {
 		weatherDetails.setPressure("33");
-		assertEquals(weatherDetails.getPressure(),"33");
+		assertEquals("33",weatherDetails.getPressure());
 	}
 
 	@Test
 	public void testSetTempMax() {
 		weatherDetails.setTempMax("8");
-		assertEquals(weatherDetails.getTempMax(),"8");
+		assertEquals("8",weatherDetails.getTempMax());
 	}
 
 }

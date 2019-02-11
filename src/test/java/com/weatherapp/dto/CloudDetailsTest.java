@@ -10,7 +10,7 @@ public class CloudDetailsTest {
 	public void testSetAll() {
 		CloudDetails cloudType = new CloudDetails();
 		 cloudType.setAll("cloudy");
-		 assertEquals(cloudType.getAll(), "cloudy");
+		 assertEquals("cloudy",cloudType.getAll());
 	}
 
 }

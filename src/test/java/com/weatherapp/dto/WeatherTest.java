@@ -20,25 +20,25 @@ public class WeatherTest {
 	@Test
 	public void testSetIcon() {
 		weather.setIcon("09d");
-		assertEquals(weather.getIcon(), "09d");
+		assertEquals("09d",weather.getIcon());
 	}
 
 	@Test
 	public void testSetDescription() {
 		weather.setDescription("shower rain");
-		assertEquals(weather.getDescription(), "shower rain");
+		assertEquals("shower rain",weather.getDescription());
 	}
 
 	@Test
 	public void testSetMain() {
 		weather.setMain("weather details");
-		assertEquals(weather.getMain(), "weather details");
+		assertEquals("weather details",weather.getMain());
 	}
 
 	@Test
 	public void testSetId() {
 		weather.setId("023");
-		assertEquals(weather.getId(), "023");
+		assertEquals("023",weather.getId());
 	}
 
 }

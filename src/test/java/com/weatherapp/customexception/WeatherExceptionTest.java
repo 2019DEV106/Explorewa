@@ -14,13 +14,13 @@ public class WeatherExceptionTest {
 	@Test
 	public void testWeatherExceptionString() {
 		WeatherException weatherException = new WeatherException("test");
-		assertEquals(weatherException.getMessage(), "test");
+		assertEquals("test",weatherException.getMessage());
 	}
 
 	@Test
 	public void testWeatherExceptionStringException() {
 		WeatherException weatherException = new WeatherException("test", new Exception());
-		assertEquals(weatherException.getMessage(), "test");
+		assertEquals("test",weatherException.getMessage());
 	}
 
 }

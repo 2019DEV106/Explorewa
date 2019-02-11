@@ -4,6 +4,8 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.ModelMap;
 import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.PostMapping;
+import org.springframework.web.bind.annotation.RequestParam;
 
 import com.weatherapp.customexception.WeatherException;
 import com.weatherapp.service.WeatherAppServiceImpl;
@@ -13,10 +15,14 @@ public class WeatherAppController {
 	@Autowired
 	public WeatherAppServiceImpl weatherAppServiceImpl;
 	
-	
 	@GetMapping(value="/weatherReport")
 	public String weatherReport(ModelMap model) throws WeatherException {
 		model.put("weatherData",weatherAppServiceImpl.fetchweatherInfo());
+		return "weatherInfo";
+	}   
+	
+	@PostMapping(value="/weatherReport")
+	public String prepareWeatherReport(@RequestParam String latitude , @RequestParam String longitude){
 		return "weatherInfo";
 	} 
 	 

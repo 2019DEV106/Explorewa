@@ -4,14 +4,10 @@ import static org.junit.Assert.assertEquals;
 import static org.junit.Assert.assertNotNull;
 import static org.junit.Assert.assertNull;
 
-import java.util.ArrayList;
-
 import org.junit.Before;
 import org.junit.Test;
 import org.mockito.InjectMocks;
 import org.mockito.MockitoAnnotations;
-
-import com.sun.tools.javac.util.List;
 
 public class WeatherDataTest {
 
@@ -26,7 +22,7 @@ public class WeatherDataTest {
 	@Test
 	public void testSetDt() {
 		weatherData.setDt("1549806120");
-		assertEquals(weatherData.getDt(), "1549806120");
+		assertEquals("1549806120",weatherData.getDt());
 	}
 
 	@Test
@@ -38,7 +34,7 @@ public class WeatherDataTest {
 	@Test
 	public void testSetVisibility() {
 		weatherData.setVisibility("6000");
-		assertEquals(weatherData.getVisibility(), "6000");
+		assertEquals("6000",weatherData.getVisibility());
 	}
 
 	@Test
@@ -50,7 +46,7 @@ public class WeatherDataTest {
 	@Test
 	public void testSetName() {
 		weatherData.setName("brussels");
-		assertEquals(weatherData.getName(), "brussels");
+		assertEquals("brussels",weatherData.getName());
 	}
 
 	@Test
@@ -62,19 +58,19 @@ public class WeatherDataTest {
 	@Test
 	public void testSetCod() {
 		weatherData.setCod("200");
-		assertEquals(weatherData.getCod(), "200");
+		assertEquals("200",weatherData.getCod());
 	}
 
 	@Test
 	public void testSetCodIsNull() {
 		weatherData.setCod(null);
-		assertNull(weatherData.getCod(), null);
+		assertNull(null,weatherData.getCod());
 	}
 
 	@Test
 	public void testSetId() {
 		weatherData.setId("2800865");
-		assertEquals(weatherData.getId(), "2800865");
+		assertEquals("2800865",weatherData.getId());
 	}
 
 	@Test
@@ -86,7 +82,7 @@ public class WeatherDataTest {
 	@Test
 	public void testSetBase() {
 		weatherData.setBase("stations");
-		assertEquals(weatherData.getBase(), "stations");
+		assertEquals("stations",weatherData.getBase());
 
 	}
 
@@ -101,35 +97,35 @@ public class WeatherDataTest {
 		CoordinatesDetails coordinatesDetails = new CoordinatesDetails();
 		coordinatesDetails.setLatitude("0.242");
 		weatherData.setCoordinatesDetails(coordinatesDetails);
-		assertEquals(weatherData.getCoordinatesDetails().getLatitude(), "0.242");
+		assertEquals("0.242",weatherData.getCoordinatesDetails().getLatitude());
 	}
 
 	@Test
 	public void testSetWeatherDetails() {
 		WeatherDetails weatherDetails = new WeatherDetails();
 		weatherDetails.setTemp("8");
-		assertEquals(weatherDetails.getTemp(), "8");
+		assertEquals("8",weatherDetails.getTemp());
 	}
 
 	@Test
 	public void testSetCloudType() {
 		CloudDetails cloudDetails = new CloudDetails();
 		cloudDetails.setAll("92");
-		assertEquals(cloudDetails.getAll(), "92");
+		assertEquals("92",cloudDetails.getAll());
 	}
 
 	@Test
 	public void testWeatherType() {
 		WeatherType weatherType = new WeatherType();
 		weatherType.setCountry("Belgium");
-		assertEquals(weatherType.getCountry(), "Belgium");
+		assertEquals("Belgium",weatherType.getCountry());
 	}
 
 	@Test
 	public void testSetWindDetails() {
 		WindDetails windDetails = new WindDetails();
 		windDetails.setSpeed("34");
-		assertEquals(windDetails.getSpeed(), "34");
+		assertEquals("34",windDetails.getSpeed());
 	}
 	
 	@Test

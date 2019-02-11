@@ -21,19 +21,19 @@ public class WindDetailsTest {
 	@Test
 	public void testSetDeg() {
 		wind.setDeg("260");
-		assertEquals(wind.getDeg(), "260");
+		assertEquals("260",wind.getDeg());
 	}
 
 	@Test
 	public void testSetSpeed() {
 		wind.setSpeed("260");
-		assertEquals(wind.getSpeed(), "260");
+		assertEquals("260",wind.getSpeed());
 	}
 	
 	@Test
 	public void testSetGust() {
 		wind.setGust("18.05");
-		assertEquals(wind.getGust(), "18.05");
+		assertEquals("18.05",wind.getGust());
 	}
 
 }
